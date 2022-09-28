@@ -275,102 +275,201 @@ var svg2 = d3.select("#svg_container_model").append("svg")
     .attr("preserveAspectRatio", "xMinYMin meet")
     .attr("viewBox", [0, 0, width, 150]);
 
+var text = ''
 d3.xml("assets/model.svg")
     .then(data => {
         svg2.node().append(data.documentElement);
 
         svg2.selectAll("#Input")
             .on('mouseover', (d, i, e) => {
-                d3.select("#model_content_title").text("State Input");
-                d3.select("#model_content_text").text("The physical state inputted to the network is a set of four-dimensional " +
-                    "vectors for each points in the mesh containing the velocity field in both direction, as well as the static and" +
-                    "dynamic pressure field. The static pressure field represents the pressure exerced by the stationnary part of the fluid" +
-                    "while the dynamic pressure field model the pressure due to the movement of the drone and the fluid. ")
-                d3.select("#model_content_equation1").html(function (d) {
-                    setTimeout(function () {
-                        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-                    }, 10);
-                    return "\\(v(t), p(t) = \\{v_i(t)\\}, \\{p_i(t)\\} \\quad \\forall i \\in \\mathcal{V}(t)\\)";
-                })
-                d3.select("#model_content_equation2").html(function (d) {
-                    setTimeout(function () {
-                        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-                    }, 10);
-                    return "";
-                });
+                if (text !== "input") {
+                    text = "input";
+                    d3.select("#model_content_title").text("State Input");
+                    d3.select("#model_content_text").text("The physical state inputted to the network is a set of four-dimensional " +
+                        "vectors for each points in the mesh containing the velocity field in both directions, as well as the static and" +
+                        "dynamic pressure field. The static pressure field represents the pressure exerced by the stationnary part of the fluid" +
+                        "while the dynamic pressure field model the pressure due to the movement of the drone and the fluid. ")
+                    d3.select("#model_content_equation1").html(function (d) {
+                        setTimeout(function () {
+                            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                        }, 10);
+                        return "\\(\\mathcal{V}(t), \\mathcal{P}(t) = \\{v_i(t)\\}, \\{p_i(t)\\} \\quad \\forall i \\in \\mathcal{M}(t)\\)";
+                    })
+                    d3.select("#model_content_equation2").html(function (d) {
+                        setTimeout(function () {
+                            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                        }, 10);
+                        return "";
+                    });
+                }
+
             });
         svg2.selectAll("#Mesh")
             .on('mouseover', (d, i, e) => {
-                d3.select("#model_content_title").text("Mesh Input");
-                d3.select("#model_content_text").text("Our model also requires the mesh structure at the given time step, " +
-                    "that is, the 2D positions of each nodes associated with the set of edges defining the triangular mesh.")
-                d3.select("#model_content_equation1").html(function (d) {
-                    setTimeout(function () {
-                        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-                    }, 10);
-                    return "\\(x(t) = \\{x_i(t)\\}_{i \\in \\mathcal{V}(t)} \\quad e(t) = \\{e_{ij}(t)\\}_{(i,j) \\in \\mathcal{E}(t)}\\)";
-                })
-                d3.select("#model_content_equation2").html(function (d) {
-                    setTimeout(function () {
-                        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-                    }, 10);
-                    return "";
-                });
+                if (text !== "mesh") {
+                    text = "mesh";
+                    d3.select("#model_content_title").text("Mesh Input");
+                    d3.select("#model_content_text").text("Our model also requires the mesh structure at the given time step, " +
+                        "that is, the 2D positions of each nodes associated with the set of edges defining the triangular mesh.")
+                    d3.select("#model_content_equation1").html(function (d) {
+                        setTimeout(function () {
+                            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                        }, 10);
+                        return "\\( \\text{Set of nodes: }\\mathcal{N}(t),\\quad \\text{Set of edges: } \\mathcal{E}(t) )\\)";
+                    })
+                    d3.select("#model_content_equation2").html(function (d) {
+                        setTimeout(function () {
+                            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                        }, 10);
+                        return "";
+                    });
+                }
             });
         svg2.selectAll("#Clustering")
             .on('mouseover', (d, i, e) => {
-                d3.select("#model_content_title").text("Clustering");
-                d3.select("#model_content_text").text("We down-scale mesh resolution through geometric clustering, which " +
-                    "is  independent of the forecasting operations and therefore pre-computed offline. A modified " +
-                    "k-means clustering is applied to the vertices of each time step and creates clusters with a " +
-                    "constant number of nodes. The advantages are twofold: (a) the irregularity and adaptive resolution " +
-                    "of the original mesh is preserved, as high density region will require more clusters, and (b) " +
-                    "constant cluster sizes facilitate parallelization and allow to speed up computations.")
-                d3.select("#model_content_equation1").html(function (d) {
-                    setTimeout(function () {
-                        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-                    }, 10);
-                    return "(\\ \\)";
-                })
-                d3.select("#model_content_equation2").html(function (d) {
-                    setTimeout(function () {
-                        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-                    }, 10);
-                    return "";
-                });
+                if (text !== "clustering") {
+                    text = "clustering";
+
+                    d3.select("#model_content_title").text("Clustering");
+                    d3.select("#model_content_text").text("We down-scale mesh resolution through geometric clustering, which " +
+                        "is  independent of the forecasting operations and therefore pre-computed offline. A modified " +
+                        "k-means clustering is applied to the vertices of each time step and creates clusters with a " +
+                        "constant number of nodes. The advantages are twofold: (a) the irregularity and adaptive resolution " +
+                        "of the original mesh is preserved, as high density region will require more clusters, and (b) " +
+                        "constant cluster sizes facilitate parallelization and allow to speed up computations.")
+                    d3.select("#model_content_equation1").html(function (d) {
+                        setTimeout(function () {
+                            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                        }, 10);
+                        return "\\( \\mathcal{C}_k = \\{i, j, ... \\} \\; k^{\\text{th}} \\text{ cluster computed on } \\mathcal{M}(t)  \\)";
+                    })
+                    d3.select("#model_content_equation2").html(function (d) {
+                        setTimeout(function () {
+                            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                        }, 10);
+                        return "";
+                    });
+                }
             });
         svg2.selectAll("#Encoder")
             .on('mouseover', (d, i, e) => {
-                d3.select("#model_content_title").text("Encoder");
-                d3.select("#model_content_text").text("The physical state is projected onto a higher dimensional space using a" +
-                    "simple encoder composed of two MLPs followed by graph neural networks. This step allows to compute " +
-                    "rich embeddings of the local situation for each nodes.")
-                d3.select("#model_content_equation1").html(function (d) {
-                    setTimeout(function () {
-                        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-                    }, 10);
-                    return "\\(\\eta_i = \\phi_\\eta(v_i, p_i, n_i), \\quad e_{ij} = \\phi_e(x_i -x_j, \\|x_i - x_j\\|).\\)";
-                })
-                d3.select("#model_content_equation2").html(function (d) {
-                    setTimeout(function () {
-                        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-                    }, 10);
-                    return "\\( e_{ij}' = \\psi_e^l\\left(\\left[\\begin{array}{cc}\\eta_i^{l} \\\\ f_i \\end{array}\\right] , \\left[\\begin{array}{cc}\\eta_j^{l} \\\\ f_j \\end{array}\\right] , e_{ij}^{l} \\right), \\quad \\eta_i' = \\psi_\\eta^l\\left(\\left[\\begin{array}{cc}\\eta_i^{l} \\\\ f_i \\end{array}\\right], \\sum_j e_{ij}'\\right) \\text{ and } \\left\\{\\begin{array}{l}\n" +
-                        "         e_{ij}^{l+1} = e_{ij}^l + e_{ij}'  \\\\\n" +
-                        "         \\eta_i^{l+1} = \\eta_i^l + \\eta_i'\n" +
-                        "    \\end{array}\\right.\\)";
-                });
+                if (text !== "encoder") {
+                    text = "encoder";
+                    d3.select("#model_content_title").text("Encoder");
+                    d3.select("#model_content_text").text("The physical state is projected onto a higher dimensional space using a " +
+                        "simple encoder composed of two MLPs followed by graph neural networks. This step allows to compute " +
+                        "rich embeddings of the local situation for each nodes. The encoder also computes an appropriate " +
+                        "positional encoding based upon spectral projection")
+                    d3.select("#model_content_equation1").html(function (d) {
+                        setTimeout(function () {
+                            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                        }, 10);
+                        return "\\(\\eta_i = \\phi_\\eta(v_i, p_i, n_i), \\quad e_{ij} = \\phi_e(x_i -x_j, \\|x_i - x_j\\|).\\)";
+                    })
+                    d3.select("#model_content_equation2").html(function (d) {
+                        setTimeout(function () {
+                            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                        }, 10);
+                        return "\\( e_{ij}' = \\psi_e^l\\left(\\left[\\begin{array}{cc}\\eta_i^{l} \\\\ f_i \\end{array}\\right] , \\left[\\begin{array}{cc}\\eta_j^{l} \\\\ f_j \\end{array}\\right] , e_{ij}^{l} \\right), \\quad \\eta_i' = \\psi_\\eta^l\\left(\\left[\\begin{array}{cc}\\eta_i^{l} \\\\ f_i \\end{array}\\right], \\sum_j e_{ij}'\\right) \\text{ and } \\left\\{\\begin{array}{l}\n" +
+                            "         e_{ij}^{l+1} = e_{ij}^l + e_{ij}'  \\\\\n" +
+                            "         \\eta_i^{l+1} = \\eta_i^l + \\eta_i'\n" +
+                            "    \\end{array}\\right.\\)";
+                    });
+                }
+            });
+        svg2.selectAll("#GraphPooling")
+            .on('mouseover', (d, i, e) => {
+                if (text !== "GraphPooling") {
+                    text = "GraphPooling";
+                    d3.select("#model_content_title").text("Graph Pooling");
+                    d3.select("#model_content_text").text("It summarizes the state of the nodes of the same cluster in a" +
+                        " single high-dimensional embedding on which the main neural processor will reason. This is " +
+                        "performed with a Gated Recurrent Unit where the individual nodes are integrated sequentially " +
+                        "in a random order. This allows to learn a more complex integration of features than a sum. " +
+                        "Given an inital GRU state , node embeddings are integrated iteratively. ")
+                    d3.select("#model_content_equation1").html(function (d) {
+                        setTimeout(function () {
+                            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                        }, 10);
+                        return "\\(    h_k^{n+1} = \\text{GRU}(\\eta_i, f_i, h_k^n), \\quad \\forall i \\in \\mathcal{C}_k" +
+                            "    \\quad w_k = \\phi_w(h_k^N) \\)";
+                    })
+                    d3.select("#model_content_equation2").html(function (d) {
+                        setTimeout(function () {
+                            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                        }, 10);
+                        return "";
+                    });
+                }
+            });
+        svg2.selectAll("#Attention")
+            .on('mouseover', (d, i, e) => {
+                if (text !== "Attention") {
+                    text = "Attention";
+                    d3.select("#model_content_title").text("Attention Module");
+                    d3.select("#model_content_text").text("It consists of a transformer with 4 layers of multi-head " +
+                        "attention (MHA)working on the embeddingsof the coarse graph. ")
+                    d3.select("#model_content_equation1").html(function (d) {
+                        setTimeout(function () {
+                            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                        }, 10);
+                        return "\\( w_k^{m+1} = \\text{MHA}\\left(Q=\\left[\\begin{array}{c}w_k^m \\\\ F(\\bar{x}_k)\\end{array}\\right], K = W_k^m, V=W_k^m\\right) \\)";
+                    })
+                    d3.select("#model_content_equation2").html(function (d) {
+                        setTimeout(function () {
+                            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                        }, 10);
+                        return "\\( Q\\text{: query}\\; K\\text{: key}\\; V\\text{value} \\)";
+                    });
+                }
+            });
+        svg2.selectAll("#Decoder")
+            .on('mouseover', (d, i, e) => {
+                if (text !== "Decoder") {
+                    text = "Decoder";
+                    d3.select("#model_content_title").text("Decoder / Up-sampler");
+                    d3.select("#model_content_text").text("The output of the attention module is calculated on the coarse" +
+                        " scale, one embedding per cluster. The decoder upsamples the representation and outputs the" +
+                        " future pressure and velocity field on the original mesh. This upsampling is done by taking the" +
+                        " original node embedding and concatenating with the cluster embedding, followed by the " +
+                        "application of a GNN, whose role is to take the information produced on a coarser level and " +
+                        "correctly distribute it over the nodes. To this end, the GNN has access to the positional " +
+                        "encoding of the node, which is also concatenated.")
+                    d3.select("#model_content_equation1").html(function (d) {
+                        setTimeout(function () {
+                            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                        }, 10);
+                        return "\\(     \\hat v(t{+}1) = v(t) + \\delta_v \\quad\\hat p(t{+}1) = p(t) + \\delta_p \\)";
+                    })
+                    d3.select("#model_content_equation2").html(function (d) {
+                        setTimeout(function () {
+                            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                        }, 10);
+                        return " \\( (\\delta_v, \\delta_p) = \\text{GNN}\\left([\\eta_i\\; w_k^M\\; f_i]\\right), \\)";
+                    });
+                }
             });
         svg2.selectAll("#Output")
             .on('mouseover', (d, i, e) => {
-                d3.select("#model_content_title").text("Output");
-                d3.select("#model_content_equation1").html(function (d) {
-                    setTimeout(function () {
-                        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-                    }, 10);
-                    return "\\(x_1 = 132\\)";
-                })
-                console.log("OK");
+                if (text !== "output") {
+                    text = "output";
+                    d3.select("#model_content_title").text("Output");
+                    d3.select("#model_content_text").text("The final output of the model is the pressure and velocity state" +
+                        "estimated at the next time step for each node in the mesh.");
+                    d3.select("#model_content_equation1").html(function (d) {
+                            setTimeout(function () {
+                                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                            }, 10);
+                            return "\\( \\mathcal{V}(t+1), \\mathcal{P}(t+1) \\)";
+                        }
+                    );
+                    d3.select("#model_content_equation2").html(function (d) {
+                        setTimeout(function () {
+                            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                        }, 10);
+                        return "";
+                    });
+                }
             });
     });
 

@@ -323,23 +323,23 @@
                         <tr>
                             <td>Step</td>
                             <td>394</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>3134</td>
+                            <td>6106</td>
+                            <td>83 GB</td>
                         </tr>
                         <tr>
                             <td>Triangular</td>
                             <td>398</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>3372</td>
+                            <td>6599</td>
+                            <td>90 GB</td>
                         </tr>
                         <tr>
                             <td>Spline</td>
                             <td>392</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>3667</td>
+                            <td>7172</td>
+                            <td>98 GB</td>
                         </tr>
                         </tbody>
                     </table>
@@ -369,9 +369,9 @@
             (Cylinder-Flow and Scalar-Flow), and on <b>EAGLE</b>.
         </p>
 
-        <p>
-            The figure below is dynamic: hover a module to get more information about is behavior.
-        </p>
+        <h6 class="text-center">
+            The figure below is dynamic: hover a module to get more information about its behavior.
+        </h6>
     </div>
     <div id="svg_container_model"></div>
 
@@ -396,10 +396,19 @@
         References of baseline methods and datasets: <br/>
         <div class="entry-content">
             <ul>
-                <li><b>MeshGraphNet & Cylinder-Flow</b>: Pfaff, Tobias, et al. "Learning Mesh-Based Simulation with Graph Networks." <i>International Conference on Learning Representations</i>.2020</li>
-                <li><b>DilResNet</b>: Stachenfeld, Kim, et al. "Learned Simulators for Turbulence." <i>International Conference on Learning Representations</i>. 2021.</li>
-                <li><b>GAT</b>: Veličković, Petar, et al. "Graph Attention Networks." <i>International Conference on Learning Representations</i>. 2018.</li>
-                <li><b>Scalar-Flow</b>: Eckert, Marie-Lena, Kiwon Um, and Nils Thuerey. "ScalarFlow: a large-scale volumetric data set of real-world scalar transport flows for computer animation and machine learning." <i>ACM Transactions on Graphics (TOG)</i> (2019)</li>
+                <li><b>MeshGraphNet & Cylinder-Flow</b>: Pfaff, Tobias, et al. "Learning Mesh-Based Simulation with
+                    Graph Networks." <i>International Conference on Learning Representations</i>.2020
+                </li>
+                <li><b>DilResNet</b>: Stachenfeld, Kim, et al. "Learned Simulators for Turbulence." <i>International
+                    Conference on Learning Representations</i>. 2021.
+                </li>
+                <li><b>GAT</b>: Veličković, Petar, et al. "Graph Attention Networks." <i>International Conference on
+                    Learning Representations</i>. 2018.
+                </li>
+                <li><b>Scalar-Flow</b>: Eckert, Marie-Lena, Kiwon Um, and Nils Thuerey. "ScalarFlow: a large-scale
+                    volumetric data set of real-world scalar transport flows for computer animation and machine
+                    learning." <i>ACM Transactions on Graphics (TOG)</i> (2019)
+                </li>
             </ul>
         </div>
     </div>
@@ -456,78 +465,275 @@
 <div class="container" style="padding-top:100px; margin-top:-100px;">
     <h3 id="results" style="padding-top:100px; margin-top:-100px;">Results</h3>
     <div class="container">
-        <h5> Cylinder-Flow</h5>
+        <h5><b>EAGLE</b></h5>
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators" style="top: 90%">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                        aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
+                        aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-interval="50000">
+                    <div class="container text-center" style="width: 90% !important;">
+                        <video class="d-block w-100" controls muted loop autoplay>
+                            <source src="assets/examples/eagle/0.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                </div>
+                <div class="carousel-item" data-interval="50000">
 
-        <h5> Fluent</h5>
+                    <div class="container text-center" style="width: 90% !important;">
+                        <video class="d-block w-100" controls muted loop autoplay>
+                            <source src="assets/examples/eagle/1.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                </div>
+                <div class="carousel-item" data-interval="50000">
+
+                    <div class="container text-center" style="width: 90% !important;">
+                        <video class="d-block w-100" controls muted loop autoplay>
+                            <source src="assets/examples/eagle/2.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                </div>
+                <div class="carousel-item" data-interval="50000">
+
+                    <div class="container text-center" style="width: 90% !important;">
+                        <video class="d-block w-100" controls muted loop autoplay>
+                            <source src="assets/examples/eagle/3.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                </div>
+                <div class="carousel-item" data-interval="50000">
+
+                    <div class="container text-center" style="width: 90% !important;">
+                        <video class="d-block w-100" controls muted loop autoplay>
+                            <source src="assets/examples/eagle/4.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleDark" role="button" data-slide="prev"
+               style="width: 50px;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleDark" role="button" data-slide="next"
+               style="width: 50px;">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <h5> Cylinder-Flow</h5>
+        <div id="carouselExampleDark2" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators" style="top: 90%">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                        aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
+                        aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-interval="50000">
+                    <div class="container text-center" style="width: 90% !important;">
+                        <video class="d-block w-100" controls muted loop autoplay>
+                            <source src="assets/examples/cylinder/0.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                </div>
+                <div class="carousel-item" data-interval="50000">
+
+                    <div class="container text-center" style="width: 90% !important;">
+                        <video class="d-block w-100" controls muted loop autoplay>
+                            <source src="assets/examples/cylinder/1.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                </div>
+                <div class="carousel-item" data-interval="50000">
+
+                    <div class="container text-center" style="width: 90% !important;">
+                        <video class="d-block w-100" controls muted loop autoplay>
+                            <source src="assets/examples/cylinder/2.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                </div>
+                <div class="carousel-item" data-interval="50000">
+
+                    <div class="container text-center" style="width: 90% !important;">
+                        <video class="d-block w-100" controls muted loop autoplay>
+                            <source src="assets/examples/cylinder/3.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                </div>
+                <div class="carousel-item" data-interval="50000">
+
+                    <div class="container text-center" style="width: 90% !important;">
+                        <video class="d-block w-100" controls muted loop autoplay>
+                            <source src="assets/examples/cylinder/4.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleDark2" role="button" data-slide="prev"
+               style="width: 50px;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleDark2" role="button" data-slide="next"
+               style="width: 50px;">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
 
         <h5> Scalar-Flow</h5>
-</div>
-<br/>
-<br/>
-<br/>
-<div class="container" style="padding-top:100px; margin-top:-100px;">
-    <h3 id="download" style="padding-top:100px; margin-top:-100px;">Download</h3>
+        <div id="carouselExampleDark3" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators" style="top: 90%">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                        aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
+                        aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-interval="50000">
+                    <div class="container text-center" style="width: 90% !important;">
+                        <video class="d-block w-100" controls muted loop autoplay>
+                            <source src="assets/examples/scalarflow/0.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                </div>
+                <div class="carousel-item" data-interval="50000">
 
-    <br/>
-    <br/>
-    <div class="container text-center ">
-        <a href="www.google.fr" class="link-primary">DOWNLOAD (Coming soon)</a>
+                    <div class="container text-center" style="width: 90% !important;">
+                        <video class="d-block w-100" controls muted loop autoplay>
+                            <source src="assets/examples/scalarflow/1.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                </div>
+                <div class="carousel-item" data-interval="50000">
+
+                    <div class="container text-center" style="width: 90% !important;">
+                        <video class="d-block w-100" controls muted loop autoplay>
+                            <source src="assets/examples/scalarflow/2.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                </div>
+                <div class="carousel-item" data-interval="50000">
+
+                    <div class="container text-center" style="width: 90% !important;">
+                        <video class="d-block w-100" controls muted loop autoplay>
+                            <source src="assets/examples/scalarflow/3.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                </div>
+                <div class="carousel-item" data-interval="50000">
+
+                    <div class="container text-center" style="width: 90% !important;">
+                        <video class="d-block w-100" controls muted loop autoplay>
+                            <source src="assets/examples/scalarflow/4.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleDark3" role="button" data-slide="prev"
+               style="width: 50px;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleDark3" role="button" data-slide="next"
+               style="width: 50px;">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+
     </div>
     <br/>
     <br/>
-</div>
+    <br/>
+    <div class="container" style="padding-top:100px; margin-top:-100px;">
+        <h3 id="download" style="padding-top:100px; margin-top:-100px;">Download</h3>
 
-<!--<div class="container" style="padding-top:100px; margin-top:-100px;">-->
-<!--    <h3 id="cite" style="padding-top:100px; margin-top:-100px;">Citation & Contact</h3>-->
-<!--    Do not hesitate to contact us for any questions about our project at this address : <a-->
-<!--        href="mailto: mail_address">mail address</a>-->
-<!--    <br/>-->
-<!--    <br/>-->
-<!--    <div class="container border bg-light">-->
-<!--<pre>-->
+        <br/>
+        <br/>
+        <div class="container text-center ">
+            <a href="www.google.fr" class="link-primary">DOWNLOAD (Coming soon)</a>
+        </div>
+        <br/>
+        <br/>
+    </div>
 
-<!--@inproceedings{eagle,-->
-<!--    title = "",-->
-<!--    author = {},-->
-<!--    booktitle = "International Conference on Learning Representations (ICLR)",-->
-<!--    year = "2023"}-->
-<!--</pre>-->
-<!--    </div>-->
-<!--</div>-->
+    <!--<div class="container" style="padding-top:100px; margin-top:-100px;">-->
+    <!--    <h3 id="cite" style="padding-top:100px; margin-top:-100px;">Citation & Contact</h3>-->
+    <!--    Do not hesitate to contact us for any questions about our project at this address : <a-->
+    <!--        href="mailto: mail_address">mail address</a>-->
+    <!--    <br/>-->
+    <!--    <br/>-->
+    <!--    <div class="container border bg-light">-->
+    <!--<pre>-->
 
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<!-- Bootstrap core JS-->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <!--@inproceedings{eagle,-->
+    <!--    title = "",-->
+    <!--    author = {},-->
+    <!--    booktitle = "International Conference on Learning Representations (ICLR)",-->
+    <!--    year = "2023"}-->
+    <!--</pre>-->
+    <!--    </div>-->
+    <!--</div>-->
 
 
-<script src="https://d3js.org/d3.v5.min.js"></script>
-<script src="https://unpkg.com/d3-simple-slider"></script>
-<script src="js/scripts.js"></script>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <!-- Bootstrap core JS-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/d3-simple-slider"></script>
+    <script src="js/scripts.js"></script>
 
 </body>
 </html>
