@@ -293,7 +293,7 @@ d3.xml("assets/model.svg")
                         setTimeout(function () {
                             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
                         }, 10);
-                        return "\\(\\mathcal{V}(t), \\mathcal{P}(t) = \\{v_i(t)\\}, \\{p_i(t)\\} \\quad \\forall i \\in \\mathcal{M}(t)\\)";
+                        return "\\(\\mathcal{V}^t, \\mathcal{P}^t = \\{v_i\\}^t, \\{p_i\\}^t \\quad \\forall i \\in \\mathcal{M}^t\\)";
                     })
                     d3.select("#model_content_equation2").html(function (d) {
                         setTimeout(function () {
@@ -315,7 +315,7 @@ d3.xml("assets/model.svg")
                         setTimeout(function () {
                             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
                         }, 10);
-                        return "\\( \\text{Set of nodes: }\\mathcal{N}(t),\\quad \\text{Set of edges: } \\mathcal{E}(t) )\\)";
+                        return "\\( \\text{Set of nodes: }\\mathcal{N}^t,\\quad \\text{Set of edges: } \\mathcal{E}^t\\)";
                     })
                     d3.select("#model_content_equation2").html(function (d) {
                         setTimeout(function () {
@@ -341,7 +341,7 @@ d3.xml("assets/model.svg")
                         setTimeout(function () {
                             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
                         }, 10);
-                        return "\\( \\mathcal{C}_k = \\{i, j, ... \\} \\; k^{\\text{th}} \\text{ cluster computed on } \\mathcal{M}(t)  \\)";
+                        return "\\( \\mathcal{C}_k = \\{i, j, ... \\} \\; k^{\\text{th}} \\text{ cluster computed on } \\mathcal{M}^t  \\)";
                     })
                     d3.select("#model_content_equation2").html(function (d) {
                         setTimeout(function () {
@@ -364,13 +364,13 @@ d3.xml("assets/model.svg")
                         setTimeout(function () {
                             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
                         }, 10);
-                        return "\\(\\eta_i = \\phi_\\eta(v_i, p_i, n_i), \\quad e_{ij} = \\phi_e(x_i -x_j, \\|x_i - x_j\\|).\\)";
+                        return "\\(\\eta_i = \\phi_\\text{node}(v_i, p_i, n_i), \\quad e_{ij} = \\phi_\\text{edge}(x_i -x_j, \\|x_i - x_j\\|).\\)";
                     })
                     d3.select("#model_content_equation2").html(function (d) {
                         setTimeout(function () {
                             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
                         }, 10);
-                        return "\\( e_{ij}' = \\psi_e^l\\left(\\left[\\begin{array}{cc}\\eta_i^{l} \\\\ f_i \\end{array}\\right] , \\left[\\begin{array}{cc}\\eta_j^{l} \\\\ f_j \\end{array}\\right] , e_{ij}^{l} \\right), \\quad \\eta_i' = \\psi_\\eta^l\\left(\\left[\\begin{array}{cc}\\eta_i^{l} \\\\ f_i \\end{array}\\right], \\sum_j e_{ij}'\\right) \\text{ and } \\left\\{\\begin{array}{l}\n" +
+                        return "\\( e_{ij}' = \\psi_\\text{edge}^l\\left(\\left[\\begin{array}{cc}\\eta_i^{l} \\\\ f_i \\end{array}\\right] , \\left[\\begin{array}{cc}\\eta_j^{l} \\\\ f_j \\end{array}\\right] , e_{ij}^{l} \\right), \\quad \\eta_i' = \\psi_\\text{node}^l\\left(\\left[\\begin{array}{cc}\\eta_i^{l} \\\\ f_i \\end{array}\\right], \\sum_j e_{ij}'\\right) \\text{ and } \\left\\{\\begin{array}{l}\n" +
                             "         e_{ij}^{l+1} = e_{ij}^l + e_{ij}'  \\\\\n" +
                             "         \\eta_i^{l+1} = \\eta_i^l + \\eta_i'\n" +
                             "    \\end{array}\\right.\\)";
@@ -419,7 +419,7 @@ d3.xml("assets/model.svg")
                         setTimeout(function () {
                             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
                         }, 10);
-                        return "\\( Q\\text{: query}\\; K\\text{: key}\\; V\\text{value} \\)";
+                        return "\\( Q\\text{: query}\\; K\\text{: key}\\; V\\text{: value} \\)";
                     });
                 }
             });
@@ -439,7 +439,7 @@ d3.xml("assets/model.svg")
                         setTimeout(function () {
                             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
                         }, 10);
-                        return "\\(     \\hat v(t{+}1) = v(t) + \\delta_v \\quad\\hat p(t{+}1) = p(t) + \\delta_p \\)";
+                        return "\\(     \\hat v^{t{+}1} = v^t + \\delta_v \\quad\\hat p^{t{+}1} = p^t + \\delta_p \\)";
                     })
                     d3.select("#model_content_equation2").html(function (d) {
                         setTimeout(function () {
@@ -460,7 +460,7 @@ d3.xml("assets/model.svg")
                             setTimeout(function () {
                                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
                             }, 10);
-                            return "\\( \\mathcal{V}(t+1), \\mathcal{P}(t+1) \\)";
+                            return "\\( \\mathcal{V}^{t+1}, \\mathcal{P}^{t+1} \\)";
                         }
                     );
                     d3.select("#model_content_equation2").html(function (d) {
